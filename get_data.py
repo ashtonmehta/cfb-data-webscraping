@@ -37,7 +37,7 @@ def clean_csv_text(raw: str) -> str:
 def scrape_csv_with_selenium(url: str, html_id: str) -> str | None:
     """Return raw CSV text from <pre id="csv_{html_id}">, or None on failure."""
     options = Options()
-    options.headless = True  # uncomment if you don't need a browser window
+    options.add_argument("--headless")  # run in headless mode
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options
