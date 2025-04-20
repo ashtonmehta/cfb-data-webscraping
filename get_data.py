@@ -14,7 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, WebDriverException
 
 # ─── adjust these paths/names as needed ─────────────────────────────────────
-INPUT_CSV = "./data/receiving_standard.csv"     # your CSV with Player,Pos,College Stats URL
+INPUT_CSV = "./data/rushing_standard.csv"     # your CSV with Player,Pos,College Stats URL
 # ─────────────────────────────────────────────────────────────────────────────
 
 # mapping from Pos to the table HTML ID
@@ -124,7 +124,7 @@ def main():
     print(df_out)
 
     # optional: save to file
-    out_file = f"./receiving/player_{idx}_{player.replace(' ', '_')}.csv"
+    out_file = f"./rushing/player_{idx}_{player.replace(' ', '_')}.csv"
     df_out.to_csv(out_file, index=False)
     print(f"✅ Saved to {out_file}")
 
